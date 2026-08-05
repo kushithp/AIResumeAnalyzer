@@ -1,0 +1,11 @@
+fastapi>=0.100.0
+python-dotenv>=1.0.0
+uvicorn>=0.22.0
+sqlalchemy>=2.0.0
+pydantic>=2.0.0
+python-multipart>=0.0.6
+pdfplumber>=0.10.0
+python-docx>=0.8.11
+requests>=2.31.0
+# openai>=1.0.0  # Optional: uncomment if you have C++ build tools installed
+pytest>=7.4.0
