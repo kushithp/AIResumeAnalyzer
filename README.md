@@ -1,40 +1,40 @@
 # AI Resume Analyzer
 
-I built this project to experiment with analyzing a resume against a job description. It takes a PDF or DOCX resume, extracts the text, and returns a report with a match score, skills that match, skills that may be missing, and suggestions for improving the resume.
+An intelligent resume analysis tool that evaluates a resume against a job description to identify matching skills, potential skill gaps, and opportunities for improvement.
 
-<<<<<<< HEAD
-The project includes a browser-based frontend served by the backend API.
-=======
-The project currently contains the **backend API**. There isn't a frontend in this repository yet.
->>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
+AI Resume Analyzer accepts resumes in PDF and DOCX formats, extracts relevant information, and generates an analysis report with an estimated match score, skill comparisons, and actionable recommendations.
 
-## What it does
+The project combines rule-based analysis with optional OpenAI-compatible API integration to explore practical applications of AI in resume evaluation.
 
-- Accepts resumes in PDF and DOCX format.
-- Extracts resume text and looks for common details such as contact information and resume sections.
-- Compares the resume with a job description and estimates a match score.
-- Shows matching skills and skills mentioned in the job description that may be missing.
-- Gives suggestions for improving the resume and preparing for interviews.
-- Saves analysis results in a database so previous analyses can be viewed.
-- Can use an OpenAI-compatible API for additional analysis if configured. The app also has a rule-based analysis path.
+## Features
 
-The score is an estimate based on the project's current logic. It isn't an official ATS score and shouldn't be treated as a guarantee that a company will shortlist a resume.
+- **Resume Upload:** Supports PDF and DOCX resume files.
+- **Text Extraction:** Extracts resume content for further analysis.
+- **Resume Information Detection:** Identifies common details, including contact information and resume sections.
+- **Job Description Matching:** Compares resume content against a provided job description.
+- **Match Score:** Calculates an estimated compatibility score based on the implemented analysis logic.
+- **Skills Analysis:** Identifies matching skills and potential skill gaps.
+- **Improvement Suggestions:** Provides recommendations to improve resume relevance and clarity.
+- **Interview Preparation:** Generates suggestions to help candidates prepare for relevant interview topics.
+- **Analysis History:** Stores analysis results in a database for future reference.
+- **Optional AI Integration:** Supports an OpenAI-compatible API for enhanced analysis when configured.
+- **Rule-Based Fallback:** Provides a rule-based analysis path when external AI integration is not enabled.
 
-## Built with
+## Tech Stack
 
-- Python
-- FastAPI and Uvicorn
-<<<<<<< HEAD
-- HTML, CSS, and JavaScript frontend
-=======
->>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
-- SQLAlchemy and SQLite
-- Pydantic
-- `pdfplumber` for PDF files
-- `python-docx` for DOCX files
-- `pytest` for tests
+| Technology | Purpose |
+|---|---|
+| Python | Core application logic |
+| FastAPI | REST API framework |
+| Uvicorn | Application server |
+| SQLAlchemy | Database ORM |
+| SQLite | Default database |
+| Pydantic | Data validation and schemas |
+| pdfplumber | PDF text extraction |
+| python-docx | DOCX text extraction |
+| pytest | Automated testing |
 
-## Project layout
+## Project Structure
 
 ```text
 AIResumeAnalyzer-main/
@@ -50,47 +50,38 @@ AIResumeAnalyzer-main/
 │   ├── test_main.py
 │   ├── requirements.txt
 │   └── .env.example
-<<<<<<< HEAD
-├── frontend/
-│   ├── index.html
-│   ├── app.js
-│   └── styles.css
-=======
->>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 ├── .gitignore
 └── README.md
 ```
 
-## Run it locally
+## Getting Started
 
-<<<<<<< HEAD
-You'll need 64-bit Python 3.10 or newer and `pip`.
-=======
-You'll need Python 3.10 or newer and `pip`.
->>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
+Follow these instructions to set up and run the project locally.
 
-### 1. Get the code
+### Prerequisites
+
+- Python 3.10 or newer
+- pip
+- Git
+
+**Windows users:** A 64-bit Python installation is recommended.
+
+### 1. Clone the Repository
 
 ```bash
 git clone <YOUR_REPOSITORY_URL>
 cd AIResumeAnalyzer-main
 ```
 
-Replace `<YOUR_REPOSITORY_URL>` with your GitHub repository URL.
+Replace `<YOUR_REPOSITORY_URL>` with the URL of your GitHub repository.
 
-### 2. Create a virtual environment
+### 2. Create a Virtual Environment
 
-**Windows (PowerShell)**
+**Windows — PowerShell**
 
 ```powershell
-<<<<<<< HEAD
 py -3 -m venv .venv
 .venv\Scripts\Activate.ps1
-python -c "import struct; print(struct.calcsize('P') * 8, 'bit')"
-=======
-python -m venv .venv
-.venv\Scripts\Activate.ps1
->>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 ```
 
 **macOS / Linux**
@@ -100,28 +91,32 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-<<<<<<< HEAD
-On Windows, confirm the last command prints `64 bit`. If it prints `32 bit`, install 64-bit Python and create a new virtual environment in a different folder (for example, `.venv64`) rather than reusing the existing one.
+To verify your Python version:
 
-=======
->>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
-### 3. Install dependencies
+```bash
+python --version
+```
+
+### 3. Install Dependencies
+
+Navigate to the backend directory:
 
 ```bash
 cd backend
-python -m pip install --upgrade pip
-<<<<<<< HEAD
-python -m pip install -r requirements.txt
-=======
-pip install -r requirements.txt
->>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 ```
 
-### 4. Set up environment variables
+Upgrade pip and install the required packages:
 
-Copy `.env.example` to `.env` in the `backend` folder.
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
 
-**Windows (PowerShell)**
+### 4. Configure Environment Variables
+
+Create a `.env` file from the provided example.
+
+**Windows — PowerShell**
 
 ```powershell
 Copy-Item .env.example .env
@@ -133,58 +128,110 @@ Copy-Item .env.example .env
 cp .env.example .env
 ```
 
-Open `backend/.env` and update the values you need. The app uses SQLite by default. LLM-based analysis is optional; configure the relevant API settings if you want to use it.
+Update `backend/.env` with the configuration required for your environment.
 
-Don't commit your `.env` file or share API keys publicly.
+- SQLite is used by default.
+- AI-powered analysis is optional.
+- Configure the appropriate API endpoint, API key, and model settings if your implementation requires them.
 
-### 5. Start the server
+Keep API credentials private. Never commit your `.env` file or expose API keys in source code.
 
-From inside the `backend` folder, run:
+### 5. Run the Application
+
+From the `backend` directory, start the server:
 
 ```bash
 python app.py
 ```
 
-Then open these URLs in your browser:
+Once the server is running, access the following endpoints:
 
-<<<<<<< HEAD
-- Application frontend: http://localhost:8000/app
-=======
->>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
-- API root / health check: http://localhost:8000/
-- Interactive API docs: http://localhost:8000/docs
-- ReDoc: http://localhost:8000/redoc
+| URL | Description |
+|---|---|
+| http://localhost:8000/ | API root or health check |
+| http://localhost:8000/docs | Interactive Swagger API documentation |
+| http://localhost:8000/redoc | ReDoc API documentation |
 
-## Running tests
+The repository currently provides a backend API. A browser-based frontend is not included in this version.
 
-From the `backend` folder:
+## Running Tests
+
+From the `backend` directory, execute:
 
 ```bash
 pytest
 ```
 
-## Notes
+This runs the project's automated tests.
 
-<<<<<<< HEAD
-- The frontend is served by FastAPI; run the backend before opening `/app`.
-- Resume parsing and skill matching depend on the text that can be extracted and the rules implemented in the project, so results may not always be accurate.
-- When an external AI API is configured, extracted resume text and the job description may be sent to that provider. Review its data-handling terms before enabling it.
-=======
-- This repository currently provides an API, not a complete web application.
-- Resume parsing and skill matching depend on the text that can be extracted and the rules implemented in the project, so results may not always be accurate.
->>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
-- Avoid testing with real resumes unless you are comfortable with how the data is stored and handled. Use sample or anonymized resumes while developing.
+## How It Works
 
-## Possible next steps
+The analysis process follows these general steps:
 
-<<<<<<< HEAD
-=======
-- Build a frontend for uploading a resume and viewing the report.
->>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
-- Add more tests for unusual resume layouts and parsing errors.
-- Improve the skill-matching rules and make the scoring easier to explain.
-- Add clearer controls for deleting saved analysis history.
+1. **Upload:** Provide a resume in PDF or DOCX format.
+2. **Extract:** Parse the document and extract its text.
+3. **Analyze:** Identify relevant resume details and skills.
+4. **Compare:** Evaluate the extracted content against the job description.
+5. **Score:** Calculate an estimated resume-to-job match score.
+6. **Report:** Return matching skills, potential gaps, and improvement suggestions.
+7. **Store:** Save the analysis results for future reference.
+
+The exact analysis depends on the rules and optional AI integration implemented in the project.
+
+## API Usage
+
+The API can be explored using the automatically generated Swagger interface:
+
+http://localhost:8000/docs
+
+Use this interface to inspect the available endpoints, review their request and response schemas, and test supported API operations.
+
+## Limitations
+
+- The match score is an estimate generated by the project's analysis logic. It is not an official Applicant Tracking System (ATS) score.
+- Resume parsing accuracy depends on document formatting, layout, and extractable text.
+- Skill matching may not capture every synonym, equivalent qualification, or contextual relationship.
+- Recommendations depend on the rules and AI capabilities configured in the application.
+- The project does not guarantee shortlisting, interviews, or employment outcomes.
+
+## Security and Privacy
+
+Resumes may contain personally identifiable and sensitive information. When using this project:
+
+- Use sample or anonymized resumes during development and testing.
+- Protect stored analysis results and restrict access to the database.
+- Never commit API keys, credentials, or personal resume data to version control.
+- Review the data retention and deletion behavior of the application.
+- If an external AI provider is configured, review its privacy policy and data-handling terms before sending resume content or job descriptions.
+
+## Future Improvements
+
+Potential enhancements include:
+
+- Building a responsive web frontend for resume uploads and analysis reports.
+- Improving skill extraction and semantic job matching.
+- Making match-score calculations more transparent and explainable.
+- Expanding test coverage for malformed files and unusual resume layouts.
+- Adding user authentication and access controls.
+- Providing controls to view and delete analysis history.
+- Supporting additional document formats and configurable analysis criteria.
 
 ## Contributing
 
-If you want to improve the project, feel free to fork the repository and open a pull request. For larger changes, opening an issue first would help keep the work focused.
+Contributions, bug reports, and feature suggestions are welcome.
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Implement your changes and add relevant tests.
+4. Commit your changes with a descriptive message.
+5. Open a pull request describing your changes.
+
+For major changes, consider opening an issue first to discuss the proposed implementation.
+
+## License
+
+No license has been specified yet. If you intend to make this project open source, add an appropriate `LICENSE` file and update this section.
+
+---
+
+**Built with Python and FastAPI.**
