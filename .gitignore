@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.env
+*.db
+*.sqlite3
+
+# Node & Frontend
+node_modules/
+frontend/dist/
+frontend/build/
+.npm
+*.log
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Docker / Temp
+*.tar
+scratch/
