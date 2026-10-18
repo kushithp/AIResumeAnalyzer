@@ -9,4 +9,7 @@ python-docx>=0.8.11
 requests>=2.31.0
 # openai>=1.0.0  # Optional: uncomment if you have C++ build tools installed
 pytest>=7.4.0
+<<<<<<< HEAD
 httpx2>=2.0.0  # Required by FastAPI's TestClient
+=======
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10

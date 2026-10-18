@@ -2,7 +2,11 @@
 
 I built this project to experiment with analyzing a resume against a job description. It takes a PDF or DOCX resume, extracts the text, and returns a report with a match score, skills that match, skills that may be missing, and suggestions for improving the resume.
 
+<<<<<<< HEAD
 The project includes a browser-based frontend served by the backend API.
+=======
+The project currently contains the **backend API**. There isn't a frontend in this repository yet.
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 
 ## What it does
 
@@ -20,7 +24,10 @@ The score is an estimate based on the project's current logic. It isn't an offic
 
 - Python
 - FastAPI and Uvicorn
+<<<<<<< HEAD
 - HTML, CSS, and JavaScript frontend
+=======
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 - SQLAlchemy and SQLite
 - Pydantic
 - `pdfplumber` for PDF files
@@ -43,17 +50,24 @@ AIResumeAnalyzer-main/
 │   ├── test_main.py
 │   ├── requirements.txt
 │   └── .env.example
+<<<<<<< HEAD
 ├── frontend/
 │   ├── index.html
 │   ├── app.js
 │   └── styles.css
+=======
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 ├── .gitignore
 └── README.md
 ```
 
 ## Run it locally
 
+<<<<<<< HEAD
 You'll need 64-bit Python 3.10 or newer and `pip`.
+=======
+You'll need Python 3.10 or newer and `pip`.
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 
 ### 1. Get the code
 
@@ -69,9 +83,14 @@ Replace `<YOUR_REPOSITORY_URL>` with your GitHub repository URL.
 **Windows (PowerShell)**
 
 ```powershell
+<<<<<<< HEAD
 py -3 -m venv .venv
 .venv\Scripts\Activate.ps1
 python -c "import struct; print(struct.calcsize('P') * 8, 'bit')"
+=======
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 ```
 
 **macOS / Linux**
@@ -81,14 +100,21 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
+<<<<<<< HEAD
 On Windows, confirm the last command prints `64 bit`. If it prints `32 bit`, install 64-bit Python and create a new virtual environment in a different folder (for example, `.venv64`) rather than reusing the existing one.
 
+=======
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 ### 3. Install dependencies
 
 ```bash
 cd backend
 python -m pip install --upgrade pip
+<<<<<<< HEAD
 python -m pip install -r requirements.txt
+=======
+pip install -r requirements.txt
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 ```
 
 ### 4. Set up environment variables
@@ -121,7 +147,10 @@ python app.py
 
 Then open these URLs in your browser:
 
+<<<<<<< HEAD
 - Application frontend: http://localhost:8000/app
+=======
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 - API root / health check: http://localhost:8000/
 - Interactive API docs: http://localhost:8000/docs
 - ReDoc: http://localhost:8000/redoc
@@ -136,13 +165,22 @@ pytest
 
 ## Notes
 
+<<<<<<< HEAD
 - The frontend is served by FastAPI; run the backend before opening `/app`.
 - Resume parsing and skill matching depend on the text that can be extracted and the rules implemented in the project, so results may not always be accurate.
 - When an external AI API is configured, extracted resume text and the job description may be sent to that provider. Review its data-handling terms before enabling it.
+=======
+- This repository currently provides an API, not a complete web application.
+- Resume parsing and skill matching depend on the text that can be extracted and the rules implemented in the project, so results may not always be accurate.
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 - Avoid testing with real resumes unless you are comfortable with how the data is stored and handled. Use sample or anonymized resumes while developing.
 
 ## Possible next steps
 
+<<<<<<< HEAD
+=======
+- Build a frontend for uploading a resume and viewing the report.
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 - Add more tests for unusual resume layouts and parsing errors.
 - Improve the skill-matching rules and make the scoring easier to explain.
 - Add clearer controls for deleting saved analysis history.

@@ -15,6 +15,7 @@ def test_health_check():
     assert response.json()["status"] == "online"
 
 
+<<<<<<< HEAD
 def test_frontend_is_served():
     """Verify the browser app and its static assets are available."""
     page = client.get("/app")
@@ -24,6 +25,8 @@ def test_frontend_is_served():
     assert client.get("/app/styles.css").status_code == 200
 
 
+=======
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 def test_extract_contact_info():
     """Test contact extraction regex."""
     sample = "Jane Doe\nEmail: jane.doe@example.com\nPhone: (555) 123-4567\nExperienced developer"

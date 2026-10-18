@@ -1,5 +1,8 @@
 import os
+<<<<<<< HEAD
 from pathlib import Path
+=======
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 import uvicorn
 from dotenv import load_dotenv
 
@@ -8,7 +11,10 @@ load_dotenv()
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+<<<<<<< HEAD
 from fastapi.staticfiles import StaticFiles
+=======
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 from database import engine, Base
 from routes import router
 
@@ -37,11 +43,14 @@ app.add_middleware(
 
 # Register routes
 app.include_router(router)
+<<<<<<< HEAD
 app.mount(
     "/app",
     StaticFiles(directory=Path(__file__).resolve().parent.parent / "frontend", html=True),
     name="frontend",
 )
+=======
+>>>>>>> 2d7c433516852e89f64c1ecb7f9e1ee464860f10
 
 
 @app.get("/")
