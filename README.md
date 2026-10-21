@@ -4,7 +4,7 @@ An intelligent resume analysis tool that evaluates a resume against a job descri
 
 AI Resume Analyzer accepts resumes in PDF and DOCX formats, extracts relevant information, and generates an analysis report with an estimated match score, skill comparisons, and actionable recommendations.
 
-The project combines rule-based analysis with optional OpenAI-compatible API integration to explore practical applications of AI in resume evaluation.
+The project combines rule-based analysis with optional OpenAI-compatible API integration to explore practical applications of AI in Resume evaluation.
 
 ## Features
 
